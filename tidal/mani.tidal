@@ -2,11 +2,11 @@
 -- USED SAMPLES
 ----------------------------------------
 -- Drops
-once $ s "drop:0" --1
-once $ s "drop:1" --2
-once $ s "drop:2" --3
-once $ s "drop:3" --6
-once $ s "drop:4" --9
+once $ s "drop:0"
+once $ s "drop:1"
+once $ s "drop:2"
+once $ s "drop:3"
+once $ s "drop:4"
 
 -- Water
 once $ s "waterreverse:0"
@@ -17,30 +17,77 @@ once $ s "waterreverse:1"
 -- RECORDED 
 ----------------------------------------
 -- #1
-xfade 1 $ s "drop:3(3,8)" # lpf "300" # lpq "0 0.1 0.2 0.4" # gain 1.2 # room 0.2 # pan (range 0.3 0.7 rand) # speed (range 0.2 0.5 rand)
+xfade 1 
+  $ s "drop:3(3,8)" 
+  # lpf "300" 
+  # lpq "0 0.1 0.2 0.4" 
+  # gain 1.2 
+  # room 0.2 
+  # pan (range 0.3 0.7 rand) 
+  # speed (range 0.2 0.5 rand)
+
 xfadeIn 1 16 $ silence
 
 -- #2
-xfadeIn 2 32 $ s "drop:0(3,8)" # delay 0 # room 0.2 # gain 1.5 # pan (range 0.4 0.7 rand) # squiz (range 5 9 rand) # speed 0.5
+xfadeIn 2 32 
+  $ s "drop:0(3,8)" 
+  # delay 0 
+  # room 0.2 
+  # gain 1.5 
+  # pan (range 0.4 0.7 rand) 
+  # squiz (range 5 9 rand) 
+  # speed 0.5
+
 xfadeIn 2 16 $ silence
 
 -- #3
 -- Live changes: "waterreverse:0" "waterreverse:0*4" "waterreverse:0*8"
-xfadeIn 3 8  $ s "waterreverse:0*8"  # hpf (range 3500 7000 rand) # hpq "0.2 0.4" # gain 1.4 # room 0.1 # pan (range 0.4 0.6 rand) # speed 4 # squiz 1
+xfadeIn 3 8 
+  $ s "waterreverse:0*8" 
+  # hpf (range 3500 7000 rand) 
+  # hpq "0.2 0.4" 
+  # gain 1.4 
+  # room 0.1 
+  # pan (range 0.4 0.6 rand) 
+  # speed 4 
+  # squiz 1
+
 xfadeIn 3 16 $ silence
 
 -- #4
-xfadeIn 4 16 $ s "waterreverse:1 ~" # delay 0.3 # room 0.9 # gain 1.6 # pan (range 0.4 0.7 rand) # squiz (range 5 8 rand) # speed 0.3
+xfadeIn 4 16 
+  $ s "waterreverse:1 ~" 
+  # delay 0.3 
+  # room 0.9 
+  # gain 1.6 
+  # pan (range 0.4 0.7 rand) 
+  # squiz (range 5 8 rand) 
+  # speed 0.3
+
 xfadeIn 4 16 $ silence
 
 
 -- #5
-xfadeIn 5 16 $ loopAt 4 $ sound "drop:0" # delay 0.2 # room 0.4 # gain 1.6 # pan (range 0.4 0.7 rand) 
+xfadeIn 5 16 
+  $ loopAt 4 
+  $ sound "drop:0" 
+  # delay 0.2 
+  # room 0.4 
+  # gain 1.6 
+  # pan (range 0.4 0.7 rand) 
+
 xfadeIn 5 8 $ silence
 
 
 -- #6
-xfadeIn 6 16 $ loopAt 4 $ sound "drop:0" # delay 0.25 # room 0.4 # gain 2 # pan (range 0.2 0.7 rand) 
+xfadeIn 6 16 
+  $ loopAt 4 
+  $ sound "drop:0" 
+  # delay 0.25 
+  # room 0.4 
+  # gain 2 
+  # pan (range 0.2 0.7 rand)
+
 xfadeIn 6 4 $ silence
 
 
@@ -51,10 +98,16 @@ xfadeIn 7 8 $ n "c"
   # room 0.4
   # speed 0.1
   # pan (range 0.4 0.7 rand)
+
 xfadeIn 7 8 $ silence
 
 -- #8
-d8 $ s "drop:1  ~ < drop:2*2 drop:0*3 >  < ~ drop:4 > " # delay 0.1 # room 0.4 # cps 2 # gain 0.6  # pan sine
-xfadeIn 8 4 $ silence
+d8 
+  $ s "drop:1  ~ < drop:2*2 drop:0*3 >  < ~ drop:4 > " 
+  # delay 0.1 
+  # room 0.4 
+  # cps 2 
+  # gain 0.6  
+  # pan sine
 
-hush
+xfadeIn 8 4 $ silence
