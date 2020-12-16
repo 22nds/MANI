@@ -1,4 +1,4 @@
-## Overview
+## About the project
 Audio for short film MANI created with [TidalCycles](https://tidalcycles.org) and custom samples.
 
 ## Prerequisites
@@ -19,9 +19,10 @@ Recordings were created with SuperColllider's audio recorder and normalized & co
 
 
 ## About MANI
-MANI, Directed by Eili Bråstad Johannessen
-Video available at: https://vimeo.com/427279482
-May, 2020
+MANI, Directed by Eili Bråstad Johannessen. May, 2020.
+
+Video available at [https://vimeo.com/427279482](https://vimeo.com/427279482). 
+
 
 ## License
 TidalCycles code, audio samples and recordings are shared under Creative Commons license [BY NC SA](https://creativecommons.org/licenses/by-nc-sa/4.0/).
